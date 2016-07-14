@@ -1,6 +1,6 @@
 import math
 #custom imports
-import usefulfunctions
+import lib.usefulfunctions as usefulfunctions
 
 """
 Tutorial used :
