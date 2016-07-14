@@ -15,7 +15,7 @@ Le fichier datahandler.py est un ensemble de fonction qui a pour objectif de for
 
 ## Naive Bayes Classifier
 
-Le Naive Bayes Classifier est un algorithme de classification supervisé. Son interet, malgré ses quelques restrictions, se trouve dans sa rapidité. On peut citer comme restriction forte le fait que les attributs du dataset sont tous indépendants. Cependant même si l'indépendance n'est pas respectée, l'algorithme peut toujours fonctionné.
+Le Naive Bayes Classifier est un algorithme de classification supervisé. Son interet, malgré ses quelques restrictions, se trouve dans sa rapidité. On peut citer comme restriction forte le fait que les attributs du dataset sont tous indépendants. Cependant même si l'indépendance n'est pas respectée, l'algorithme peut toujours fonctionner.
 
 ### Algorithme
 
