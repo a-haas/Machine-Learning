@@ -38,3 +38,24 @@ Cette implémentation nécessite un fichier csv d'input et un autre d'output. Le
 * http://machinelearningmastery.com/naive-bayes-classifier-scratch-python/
 * https://en.wikipedia.org/wiki/Naive_Bayes_classifier
 * https://www.youtube.com/watch?v=IlVINQDk4o8
+
+## Decision Tree
+
+Algorithme utilisé : CART avec l'indice d'impureté de Gini
+
+### Avancement
+
+* Création de l'arbre maximal pour des inputs continues
+* Impression, au sein de la console, de l'arbre de décision
+* Possibilité de faire une prédiction pour un arbre de décision généré
+
+### Démo
+
+Une démo est disponible (cf. decisiontreedemo.py) et permet de tester le classifier sur le dataset iris
+
+### Sources
+
+*ftp://public.dhe.ibm.com/software/analytics/spss/support/Stats/Docs/Statistics/Algorithms/13.0/TREE-CART.pdf
+*http://edoc.hu-berlin.de/master/timofeev-roman-2004-12-20/PDF/timofeev.pdf
+*http://people.revoledu.com/kardi/tutorial/DecisionTree/how-to-measure-impurity.htm
+*https://en.wikipedia.org/wiki/Decision_tree_learning

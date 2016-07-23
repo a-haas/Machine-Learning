@@ -13,6 +13,12 @@ def csvtolist (filename):
 	with open(filename, 'r') as data:
 		return list(csv.reader(data))
 
+def tofloat(matrix):
+	for i in range(len(matrix)):
+		for j in range(len(matrix[i])):
+			matrix[i][j] = float(matrix[i][j])
+	return matrix
+
 def csvtoheader(filename):
 	#init
 	header = []
