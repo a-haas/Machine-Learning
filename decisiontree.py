@@ -163,7 +163,7 @@ class DecisionTree():
 		# start rendering
 		if self.split is not None:
 			msg = "Condition : " + header[self.split[0]] + " <= " + str(self.split[1])
-			print("\t"*depth + "Condition : " + header[self.split[0]] + " < " + str(self.split[1]))
+			print("\t"*depth + msg)
 			# left side
 			if self.left is not None:
 				self.left.representation(header, depth+1)

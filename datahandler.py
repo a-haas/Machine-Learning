@@ -48,9 +48,9 @@ def csvtoattributearray(filename, headerfilename):
 
 def splitio(inputname, outputname, matrix):
 	inputfile = open(inputname, 'w', newline='\n')
-	inputwriter = csv.writer(inputfile, delimiter=';')
+	inputwriter = csv.writer(inputfile, delimiter=',')
 	outputfile = open(outputname, 'w', newline='\n')
-	outputwriter = csv.writer(outputfile, delimiter=';')
+	outputwriter = csv.writer(outputfile, delimiter=',')
 	for array in matrix:
 		#to avoid last column presumed as input 
 		#might need a fix for different datasets
