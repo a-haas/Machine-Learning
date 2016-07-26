@@ -95,3 +95,13 @@ def normaliseformula(data, max, min):
 	#convert to float
 	data = float(data)
 	return (data - min)/(max - min)	
+
+# comparison
+# correct is a matrix (because it is how csv create it)
+# generated is an array (this is the way the classifier returns the data)
+def compareoutputs(generated, correct):
+	rate = 0
+	for i in range(len(generated)):
+		if generated[i] == correct[i][0]:
+			rate += 1
+	return rate/len(generated)*100

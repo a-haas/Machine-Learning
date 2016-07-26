@@ -1,3 +1,5 @@
+import lib.usefulfunctions as usefulfunctions
+
 """
 ftp://public.dhe.ibm.com/software/analytics/spss/support/Stats/Docs/Statistics/Algorithms/13.0/TREE-CART.pdf
 http://edoc.hu-berlin.de/master/timofeev-roman-2004-12-20/PDF/timofeev.pdf
@@ -118,6 +120,52 @@ def splitting(dataset, output, split):
 			rightoutput.append(output[i])
 	# dictionnary (for convenience) of generated input/output
 	return {"left": [leftinput, leftoutput], "right": [rightinput, rightoutput]}
+
+# now take care of overfitting
+# nmin : minimum size used for splitting
+def pruning(tree, nmin):
+	# first we need to cut to small branches of the tree
+	tree = cutting(tree, nmin)
+	# then we need to re-assemble the mess left
+	tree = rebuild(tree)
+	return tree
+
+def cutting(tree, nmin):
+	# stopping condition
+	if tree is None:
+		return None
+	if len(tree.output) < nmin:
+		return None
+	else:
+		tree.left = cutting(tree.left, nmin)
+		tree.right = cutting(tree.right, nmin)
+		return tree
+
+def rebuild(tree):
+	# if both tree are null it means that it's a classification node
+	if tree.right is None and tree.left is None:
+		# search the most representated value in the output
+		outputdict = {}
+		# start by counting them
+		for array in tree.output:
+			for classname in array:
+				if classname not in outputdict:
+					outputdict[classname] = 0
+				outputdict[classname] += 1
+		# then find the key with max value and it's our classification 
+		tree.classification = usefulfunctions.keywithmaxvalue(outputdict) 
+		return tree
+	# if left tree is null then the right tree should replace parent tree
+	elif tree.left is None:
+		return rebuild(tree.right)
+	# same but the other way around
+	elif tree.right is None:
+		return rebuild(tree.left)
+	# if it is a classic tree then rebuild left then right for recursive effect
+	else:
+		tree.left = rebuild(tree.left)
+		tree.right = rebuild(tree.right)
+		return tree
 
 # classifier for only one input
 def prediction(input, decisiontree):

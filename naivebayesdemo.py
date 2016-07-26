@@ -29,7 +29,13 @@ def main():
 	max = datahandler.matrixmax(testinginput)
 	testinginput = datahandler.normalise(testinginput, max, min)
 	predicts = naivebayes.datasetprediction(testinginput, training)
+	print("Classification predictions :\n")
 	print(predicts)
+	# predictions ratio
+	testingoutput = datahandler.csvtolist("datasets/iris/testing-iris-output.csv")
+	ratio = datahandler.compareoutputs(predicts, testingoutput)
+	print("\nPredictions ratio :\n")
+	print(str(ratio) + " %")
 
 if __name__ == '__main__':
 	main()
