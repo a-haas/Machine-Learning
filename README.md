@@ -71,7 +71,7 @@ Cette implémentation nécessite un fichier csv d'input et un autre d'output. Le
 
 ### Sources
 
-*ftp://public.dhe.ibm.com/software/analytics/spss/support/Stats/Docs/Statistics/Algorithms/13.0/TREE-CART.pdf
-*http://edoc.hu-berlin.de/master/timofeev-roman-2004-12-20/PDF/timofeev.pdf
-*http://people.revoledu.com/kardi/tutorial/DecisionTree/how-to-measure-impurity.htm
-*https://en.wikipedia.org/wiki/Decision_tree_learning
+* ftp://public.dhe.ibm.com/software/analytics/spss/support/Stats/Docs/Statistics/Algorithms/13.0/TREE-CART.pdf
+* http://edoc.hu-berlin.de/master/timofeev-roman-2004-12-20/PDF/timofeev.pdf
+* http://people.revoledu.com/kardi/tutorial/DecisionTree/how-to-measure-impurity.htm
+* https://en.wikipedia.org/wiki/Decision_tree_learning
